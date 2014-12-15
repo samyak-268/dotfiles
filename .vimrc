@@ -1,11 +1,22 @@
-nnoremap <leader>cc= :0r /home/samyakdatta/CPP/base.cpp
-
+execute pathogen#infect()
 set autoindent
 filetype plugin indent on
 syntax on
 
+" Auto-open NERDTree plugin
+au VimEnter * NERDTree
+
 " Color scheme
-set background=dark
+" set background=dark
+syntax enable
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+endif
+set t_Co=16
+let g:solarized_termcolors=16
+colorscheme solarized
 
 " Highlight current line
 au WinLeave * set nocursorline nocursorcolumn
@@ -32,3 +43,6 @@ set tabstop=4			" tab width
 set softtabstop=4		" backspace
 set shiftwidth=4		" indent width
 set expandtab			" expand tab to space
+
+" C++ template for competitive programming
+nnoremap <leader>cc= :0r /home/samyakdatta/CPP/base.cpp
