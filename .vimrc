@@ -46,3 +46,6 @@ set expandtab			" expand tab to space
 
 " C++ template for competitive programming
 nnoremap <leader>cc= :0r /home/samyakdatta/CPP/base.cpp
+
+" Enable PHP autocomplete every time a .php file is opened
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
